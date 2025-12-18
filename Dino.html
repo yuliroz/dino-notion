@@ -1,0 +1,41 @@
+<div class="iframe-crop">
+  <iframe
+    src="https://chromedino.com/"
+    frameborder="0"
+    scrolling="no"
+    loading="lazy"
+    tabindex="-1"
+  ></iframe>
+</div>
+
+<style>
+  .iframe-crop{
+    position: relative;
+    width: 100%;
+    height: 250px;      /* ajuste la hauteur visible */
+    overflow: hidden;   /* cache tout ce qui dépasse = recadrage */
+  }
+
+  .iframe-crop iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /* 1) taille réelle de l'iframe (plus grand que la fenêtre) */
+    width: 1400px;      /* augmente pour avoir de la marge de recadrage */
+    height: 900px;
+
+    /* 2) zoom */
+    transform: scale(1.8);
+
+    /* 3) point d'ancrage du zoom (important) */
+    transform-origin: 0 0;
+
+    /* 4) déplacement pour cadrer la zone voulue */
+    /* Exemple: déplace l'iframe vers la gauche et vers le haut */
+    margin-left: -620px;
+    margin-top: -205px;
+
+    border: 0;
+  }
+</style>
